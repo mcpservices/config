@@ -7,13 +7,13 @@ cd "$(dirname "$0")"
 ap_file="ap"
 hostapd_conf_file="hostapd.conf"
 isc_config="isc-dhcp-server"
-dhcp_config="dhclient.conf"
+dhcp_config="dhcpd.conf"
 
 # Destination directories
 interfaces_dir="/etc/network/interfaces.d/"
 hostapd_dir="/etc/hostapd/"     
 isc_dir="/etc/default/"
-dhcp_dir="/etc/"
+dhcp_dir="/etc/dhcp/"
 
 # Copy ap file to /etc/network/interfaces/
 cp "$ap_file" "$interfaces_dir"
