@@ -1,0 +1,16 @@
+[Unit]
+Description=Socat Listener for Septentrio
+After=network.target
+
+
+[Service]
+ExecStart=/usr/bin/socat TCP-LISTEN:12345,reuseaddr,fork FILE:/dev/ttyACM1,rawer,b230400,cs8,parenb=0,cstopb=0,clocal=0
+Restart=always
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=socat_septentrio
+Environment=SYSTEMD_LOG_LEVEL=info
+
+
+[Install]
+WantedBy=multi-user.target
